@@ -20,7 +20,7 @@ nColors = obj;
 
 pixel_labels = reshape(cluster_idx,nrows,ncols);
 
-segmented_images = cell(1,3);
+segmented_images = cell(1,obj);
 rgb_label = repmat(pixel_labels,[1 1 3]);
 
 for k = 1:nColors
