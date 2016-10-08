@@ -2,7 +2,7 @@
 
 clear; close all;
 
-name = 'convexhull';
+name = 'convexhull03';
 img = imread([name,'.jpg']);
 obj = 3;    %”wŒi‚İ‚Ì•ªŠ„”
 %imshow(img);
