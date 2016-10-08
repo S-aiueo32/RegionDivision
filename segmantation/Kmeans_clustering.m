@@ -2,7 +2,8 @@
 
 clear; close all;
 
-img = imread('convexhull.jpg');
+name = 'convexhull';
+img = imread([name,'.jpg']);
 obj = 3;    %”wŒi‚İ‚Ì•ªŠ„”
 %imshow(img);
 
@@ -29,9 +30,10 @@ for k = 1:nColors
     segmented_images{k} = color;
 end
 
+mkdir(name);
 for k = 1:nColors
     tmp = uint8(segmented_images{k});
-    imwrite(tmp,['segmented_images_0',num2str(k),'.jpg']);
+    imwrite(tmp,[name,'/segmented_images_0',num2str(k),'.jpg']);
 end
 
 return;
