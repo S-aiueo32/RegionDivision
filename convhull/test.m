@@ -2,7 +2,7 @@
 
 clear; close all;
 
-I = rgb2gray(imread('segmented_images_01.jpg'));
+I = rgb2gray(imread('segmented_images_03.jpg'));
 BI = edge(I,'Sobel');
 imshow(BI); hold on;
 
