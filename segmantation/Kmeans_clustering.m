@@ -26,7 +26,8 @@ rgb_label = repmat(pixel_labels,[1 1 3]);
 
 for k = 1:nColors
     color = img;
-    color(rgb_label ~= k) = 0;
+    color(rgb_label ~= k) = 255;
+    %color(rgb_label ~= k) = 0;
     segmented_images{k} = color;
 end
 
