@@ -4,6 +4,7 @@ clear; close all;
 
 SEG = cell(1,3);
 CONV = cell(1,3);
+BW = cell(1,3);
 SEG{1} = rgb2gray(imread('segmented_images_01.jpg'));
 SEG{2} = rgb2gray(imread('segmented_images_02.jpg'));
 SEG{3} = rgb2gray(imread('segmented_images_03.jpg'));
@@ -13,8 +14,6 @@ for ii = 1:3
     countWhite = 0;
     countBlack = 0;
     img = SEG{ii};
-    imshow(img); %pause;
-    imhist(img); pause;
     [x,y] = size(img);
     for jj = 1:x
         for kk = 1:y
@@ -33,10 +32,17 @@ end
 
 for ii = 1:3
     if BGFlag(ii) == false
-        SEG{ii} = SEG{ii}>Threshold(SEG{ii});
+        %SEG{ii} = SEG{ii}>Threshold(SEG{ii});
         %imshow(SEG{ii}); pause;
+        BW{ii} = SEG{ii} > Threshold(SEG{ii});
         CONV{ii} = toConvHull(SEG{ii});
-        %imshow(conv); pause;
-        
+        %figure(ii)
+        %imshow(CONV{ii}); %pause;
     end
 end
+
+OL = logical(CONV{1}.*CONV{3});
+
+imshow(BW{1}); pause;
+imshow(BW{3}); pause;
+imshow(BW{1}.*OL); pause;

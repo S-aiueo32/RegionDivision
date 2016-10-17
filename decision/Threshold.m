@@ -2,13 +2,12 @@ function y = Threshold(x)
     p1=0;
     p2=0;
 
-    pause('off');
+    %pause('off');
     [counts,binLocation] = imhist(x);
     close;
-    pause('on');
     ave = sum(counts)/255;
 
-    for ii = 1:256
+    for ii = 1:255
         if counts(ii) > ave
             if p1 == 0
                 p1 = ii;
