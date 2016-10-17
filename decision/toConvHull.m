@@ -1,3 +1,5 @@
+% オブジェクトの凸包を2値画像として返す関数
+
 function y = toConvHull(x)
     %x = rgb2gray(x);
     x = x > Threshold(x);

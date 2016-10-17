@@ -1,3 +1,5 @@
+% è‡’l‚ğ•Ô‚·ŠÖ”
+
 function y = Threshold(x)
     p1=0;
     p2=0;
