@@ -6,8 +6,8 @@ function y = toConvHull(x)
     %imshow(x); axis image; pause;
 
     CV = regionprops(x,'ConvexHull');
-    anchor = [uint16(max(CV.ConvexHull(:,2))),...
-        uint16(max(CV.ConvexHull(:,1)))];
+    anchor = [uint16(min(CV.ConvexHull(:,2))),...
+        uint16(min(CV.ConvexHull(:,1)))];
 
     CI = regionprops(x,'ConvexImage');
     CI = getfield(CI,'ConvexImage');
@@ -16,8 +16,8 @@ function y = toConvHull(x)
     [m,n] = size(CI);
     for ii = 1:m
         for jj = 1:n
-            x(anchor(1)-ii, anchor(2)-jj) ...
-                = CI(m-ii+1,n-jj+1);
+            x(anchor(1)+ii-1, anchor(2)+jj-1) ...
+                = CI(ii,jj);
         end
     end
 

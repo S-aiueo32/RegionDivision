@@ -53,7 +53,7 @@ for ii = 1:3
     end
 end
 
-%imshow(BW{1}); pause;
+imshow(CONV{1}); pause;
 %imshow(BW{3}); pause;
 %imshow(BW{1}.*OL{1,3}); pause;
 %imshow(BW{3}.*OL); pause;
