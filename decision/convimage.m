@@ -2,9 +2,9 @@
 
 clear; close all;
 
-BW = rgb2gray(imread('tri.jpg'));
+BW = rgb2gray(imread('segmented_images_02.jpg'));
 BW = BW > Threshold(BW);
-imshow(BW); axis image; pause;
+%imshow(BW); axis image; pause;
 
 CV = regionprops(BW,'ConvexHull');
 anchor = [uint16(min(CV.ConvexHull(:,2))),...
@@ -13,7 +13,7 @@ anchor = [uint16(min(CV.ConvexHull(:,2))),...
 CI = regionprops(BW,'ConvexImage');
 CI = getfield(CI,'ConvexImage');
 
-imshow(CI); pause;
+%imshow(CI); pause;
 [m,n] = size(CI);
 for ii = 1:m
     for jj = 1:n

@@ -6,4 +6,4 @@ ORG = imread('img.jpg');
 SEG = segImg(ORG,3);
 % tmp = SEG{1};
 % imshow(tmp);
-flag = isBG(SEG);
+%flag = isBG(SEG);
