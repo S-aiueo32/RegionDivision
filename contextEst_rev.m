@@ -18,8 +18,8 @@ function ARR=contextEst_rev(SEG)
     for ii=1:n-1
        for jj=ii+1:n
            %----インデックスが若い方が前でない時if文内に入る．-----%
-           subplot(2,1,1); imshow(BW{ii}.*CH{jj});
-           subplot(2,1,2); imshow(CH{ii}.*BW{jj});
+           %subplot(2,1,1); imshow(BW{ii}.*CH{jj});
+           %subplot(2,1,2); imshow(CH{ii}.*BW{jj});
            if ~(~(isequal(BW{ii}.*CH{jj},zeros(x,y)))&&isequal(CH{ii}.*BW{jj},zeros(x,y)))
              [CH{ii},CH{jj}] = deal(CH{jj},CH{ii});
              [BW{ii},BW{jj}] = deal(BW{jj},BW{ii});
