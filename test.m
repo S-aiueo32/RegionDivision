@@ -2,8 +2,8 @@
 
 clear; close all;
 
-name = 'img03.png';
-obj = 4;
+name = 'img01.jpg';
+obj = 3;
 ORG = imread(name);
 
 subplot()
@@ -12,15 +12,15 @@ SEG = segImg(ORG,obj);
 ARR = contextEst_rev(SEG);
 
 
-mkdir(['images/',name]);
+%mkdir(['images/',name]);
 figure;
 for ii = 1:obj
     subplot(obj,2,ii*2-1);
     imshow(SEG{ii});    title(['•À‚Ñ‘Ö‚¦‘O(',num2str(ii),')']);
     subplot(obj,2,ii*2);
     imshow(ARR{ii});    title(['•À‚Ñ‘Ö‚¦Œã(',num2str(ii),')']);
-    imwrite(SEG{ii},['images/',name,'/segmented_',num2str(ii),'.jpg']);
-    imwrite(ARR{ii},['images/',name,'/layer_',num2str(ii),'.jpg']);
+    %imwrite(SEG{ii},['images/',name,'/segmented_',num2str(ii),'.jpg']);
+    %imwrite(ARR{ii},['images/',name,'/layer_',num2str(ii),'.jpg']);
 end
 
 figsz = get(gcf,'Position');
