@@ -3,10 +3,8 @@
 clear; close all;
 
 name = 'img03.png';
-obj = 4;
+obj = 4;    %オブジェクト数の指定(背景込み)
 ORG = imread(name);
-
-subplot()
 
 SEG = segImg(ORG,obj);
 ARR = contextEst_rev(SEG);
